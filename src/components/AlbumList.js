@@ -15,12 +15,20 @@ class AlbumList extends Component {
             })
     }
 
-    render() {
-        console.log(this.state);
+    //Helper Method
+    renderAlbums() {
+        return (
+            this.state.albums.map( album =>
+                <Text> {album.title} </Text>
+            )
+        );
+    }
 
+    //View
+    render() {
         return (
             <View>
-                <Text> Hey Yoh! </Text>
+                {this.renderAlbums()}
             </View>
         );
     }
